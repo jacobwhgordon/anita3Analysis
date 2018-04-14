@@ -4,18 +4,18 @@ This repository stores code used in Jacob Gordon's thesis research.
 
 Code requires ROOT HEALPix, and anitaTools (OSU edit of anitaTools created by Sam Stafford, to be more precise) to run properly.  
 
-runInterferometry.cxx analyses raw .root data files storing ANITA-III data. (data also not included)  /n
-  The file also preforms interferometry on the data and calcualted quality cuts. /n
+runInterferometry.cxx analyses raw .root data files storing ANITA-III data. (data also not included) 
+  The file also preforms interferometry on the data and calcualted quality cuts. 
   (Written by Sam Stafford, Lightly altered by Jacob Gordon)
   
 runAnalysisStage01.cxx preforms the first round of analysis cuts, which focus on cuts that are directional or location based.
-  The file takes in the .root file runInterferomerty outputs
+  The file takes in the .root file runInterferomerty outputs.
   (Written by Sam Stafford, Edited heavily by Jacob Gordon to add cuts, new plots, new table printouts, and new functions)
 
 runAnalysisStage02.cxx preforms the rest of the cuts.  Cuts that depend on the HEALPix binning to be preformed.
   The file can be run with or without final cuts enabled, but should be run WITHOUT final cuts enabled until optimizeLDCuts has been run.
   The file takes in the .root file runAnalysisStage01 outputs, and if finalCuts are enabled, a .txt file with bin by bun cut information
-  output by optimizeLDCuts
+  output by optimizeLDCuts.
   (Written by Sam Stafford, Edited heavily by Jacob Gordon to add cuts, new plots, new table printouts, and new features.)
   
 optimizeLDCuts.cxx preforms a healpix bin by healpix bin optimiztion of the final cut paramaters, including the 
