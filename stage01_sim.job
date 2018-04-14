@@ -1,0 +1,30 @@
+#PBS -N stage01Sim
+#PBS -l walltime=8:00:00
+#PBS -l nodes=1:ppn=1 
+#PBS -l mem=10GB
+#PBS -j oe
+#PBS -A PAS0174
+
+
+cd $PBS_O_WORKDIR
+##cp runAnalysisStage01 $TMPDIR
+##cd $TMPDIR    
+source ../env.sh
+
+## using normal events
+##./runAnalysisStage01 -CA -D/fs/scratch/PAS0174/anita/2015_05_19/sample_90/geomFilter -i6 407 439
+
+##./runAnalysisStage01 -CA -D/fs/scratch/PAS0174/anita/2015_05_19/sample_90/geomFilter -i6 407 439
+
+
+## using sim events
+
+##./runAnalysisStage01 -CA -u -D/fs/scratch/PAS0174/anita/2015_05_19/simulation_large/geomFilter 801 808
+./runAnalysisStage01 -CA -u -9 -D/fs/scratch/PAS0174/anita/2015_05_19/simulation_01_15_18/geomFilter 1 500 -O../resultsNewSim
+##./runAnalysisStage01 -CA -u -9 -D/fs/scratch/PAS0174/anita/2015_05_19/simulation_01_15_18/geomFilter 1 500 -O../resultsAltCuts/noTrigDir
+##./runAnalysisStage01 -CA -u -9 -D/fs/scratch/PAS0174/anita/2015_05_19/simulation_02_01_18_thermalOnly/geomFilter 1 500 -O../resultsNewSimTherm
+
+##./runAnalysisStage01 -v -D../analysisResults -I/fs/scratch/PAS0174/anita/2015_05_19/sample_10/geomFilter 175 439
+
+
+

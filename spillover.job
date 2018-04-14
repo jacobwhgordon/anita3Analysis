@@ -1,0 +1,36 @@
+#PBS -N spillover99V
+#PBS -l walltime=08:00:00
+#PBS -l nodes=1:ppn=1
+##PBS -A PCON0003
+#PBS -A PAS0174
+#PBS -l mem=8GB
+#PBS -j oe
+#PBS -t 0-9
+
+cd $PBS_O_WORKDIR
+
+source ../env.sh
+
+##cp spillover $TMPDIR
+##cd $TMPDIR
+##echo ${PBS_ARRAYID}
+
+./spillover -pV ${PBS_ARRAYID} --PHI=5.04 --THETA=-5.04 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

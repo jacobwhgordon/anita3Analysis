@@ -1,0 +1,29 @@
+#PBS -N interf_343_9
+#PBS -l walltime=48:00:00
+#PBS -l nodes=1:ppn=1
+#PBS -A PAS0174
+#PBS -l mem=20GB
+#PBS -j oe
+cd $PBS_O_WORKDIR
+source ../env.sh
+cp runInterferometry $TMPDIR
+cd $TMPDIR    
+
+##./runInterferometry -PB -Ooutput 175 > runInterferometry.out
+
+## for data
+./runInterferometry -Noverlap -PB --FILTER_OPTION=4 -bbaselineSampleSmooth_1_2.00.root -O/fs/scratch/PAS0174/anita/2015_05_19/sample_90/geomFilter -S10 -s9 343
+
+
+## for Sim
+##./runInterferometry -PB -u -bbaselineSampleSmooth_1_2.00.root -O/fs/scratch/PAS0174/anita/2015_05_19/simulation_11_15_17/geomFilter -S1 3
+
+
+###for i in {175..439};
+##for i in {175..175};
+##do
+
+##  ./runInterferometry -PB -Ooutput ${i};
+
+##done
+

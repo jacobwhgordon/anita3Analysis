@@ -1,0 +1,29 @@
+#PBS -N stage01_7_9
+###PBS -l walltime=50:00:00
+#PBS -l walltime=10:00:00
+#PBS -l nodes=1:ppn=1 
+#PBS -l mem=10GB
+#PBS -j oe
+#PBS -A PAS0174
+
+
+cd $PBS_O_WORKDIR
+##cp runAnalysisStage01 $TMPDIR
+##cd $TMPDIR    
+source ../env.sh
+
+## using normal events (90% data)
+./runAnalysisStage01 -CA -9 -D/fs/scratch/PAS0174/anita/2015_05_19/sample_90/geomFilter -i9 407 439
+
+##./runAnalysisStage01 -CA -9 -D/fs/scratch/PAS0174/anita/2015_05_19/sample_90/geomFilter -i9 407 439
+
+## using 10% data
+
+##./runAnalysisStage01 -CA -D/fs/scratch/PAS0174/anita/2015_05_19/sample_10/geomFilter -i9 407 439
+
+## using sim events
+##./runAnalysisStage01 -CA -D/fs/scratch/PAS0174/anita/2015_05_19/simulation_large/geomFilter 801 808
+
+
+
+

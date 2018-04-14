@@ -1,0 +1,20 @@
+#PBS -N stage02_newSim
+#PBS -l walltime=6:00:00
+#PBS -l nodes=1:ppn=1 
+#PBS -l mem=10GB
+#PBS -j oe
+#PBS -A PAS0174
+cd $PBS_O_WORKDIR
+##cp runAnalysisStage02 $TMPDIR
+##cd $TMPDIR    
+source ../env.sh
+
+
+##./runAnalysisStage02 -D../results -I/fs/scratch/PAS0174/anita/2015_05_19/sample_90/geomFilter 175 439 -PH -S_h_side -FanalysisOutput90/anlysisOutput_175_439_0.root 
+
+./runAnalysisStage02 -D../resultsNewSim -I/fs/scratch/PAS0174/anita/2015_05_19/sample_90/geomFilter 175 439 -PV -S_v -FanlysisOutput_175_439.root
+
+##./runAnalysisStage02 -D../results -I/fs/scratch/PAS0174/anita/2015_05_19/sample_90/geomFilter 175 439
+
+##cp runAnalysisStage02.out $PBS_O_WORKDIR
+

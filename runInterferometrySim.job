@@ -1,0 +1,34 @@
+#PBS -N interferometry_sim_500
+#PBS -l walltime=1:00:00
+#PBS -l nodes=1:ppn=1
+#PBS -A PAS0174
+#PBS -l mem=20GB
+#PBS -j oe
+cd $PBS_O_WORKDIR
+source ../env.sh
+cp runInterferometry $TMPDIR
+cd $TMPDIR    
+
+##./runInterferometry -PB -Ooutput 175 > runInterferometry.out
+
+## for data
+##./runInterferometry -Noverlap -PB --FILTER_OPTION=4 -bbaselineSampleSmooth_1_2.00.root -O/fs/scratch/PAS0174/anita/2015_05_19/sample_90/geomFilter -S1 500
+
+
+## for Sim
+
+### Sim with min bias
+./runInterferometry -Noverlap -PB -u --FILTER_OPTION=4 -bbaselineSampleSmooth_1_2.00.root -O/fs/scratch/PAS0174/anita/2015_05_19/simulation_01_15_18/geomFilter -S1 500
+
+### Sim with therm only
+##./runInterferometry -Noverlap -PB -u --FILTER_OPTION=4 -bbaselineSampleSmooth_1_2.00.root -O/fs/scratch/PAS0174/anita/2015_05_19/simulation_02_01_18_thermalOnly/geomFilter -S1 500
+
+
+###for i in {175..439};
+##for i in {175..175};
+##do
+
+##  ./runInterferometry -PB -Ooutput ${i};
+
+##done
+

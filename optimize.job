@@ -1,0 +1,29 @@
+#PBS -N optimize
+##PBS -l walltime=40:00:00
+##PBS -l walltime=1:00:00
+#PBS -l nodes=1:ppn=1
+#PBS -l mem=8GB
+#PBS -A PAS0174
+##PBS -A PAS0654
+##PBS -A COND003
+#PBS -j oe
+cd $PBS_O_WORKDIR
+##cp runAnalysisStage02 $TMPDIR
+##cd $TMPDIR
+
+source /users/PAS0174/osu8620/.bash_profile
+source ../env.sh
+
+
+##./optimizeLDCut -pH
+
+./optimizeLDCut_lowBG -pV -r --PHI_HP_OFFSET=0.56 --THETA_HP_OFFSET=-5.04
+
+##./optimizeLDCut -pV -r --PHI_HP_OFFSET=0.00 --THETA_HP_OFFSET=-1.68 175 439
+
+##./optimizeLDCut2 175 439  --CUT_SLOPE=-6 --CIRC_PEAK_SEP_THRESHOLD=46 --CIRC_PEAK_STRENGTH_THRESHOLD=0.015
+
+##./optimizeLDCut 175 439 -v --CUT_SLOPE=-6 --CIRC_PEAK_SEP_THRESHOLD=0 --CIRC_PEAK_STRENGTH_THRESHOLD=0.0
+
+##./optimizeLDCut 175 439 -v -r --CUT_SLOPE=-6 --CIRC_PEAK_SEP_THRESHOLD=46 --CIRC_PEAK_STRENGTH_THRESHOLD=0.015 --HP_PHI_OFFSET=0.1 --HP_THETA_OFFSET=90.0
+
