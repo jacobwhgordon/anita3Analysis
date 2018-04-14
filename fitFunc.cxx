@@ -2,7 +2,7 @@
 //the Anita 3 Binned analysis.
 //
 //By: Jacob Gordon (Unless there are problems... then... who 
-//                  knows who wrote this shit)
+//                  knows who wrote this)
 //
 ///////////////////////////////////////////////////////////////////////
 
