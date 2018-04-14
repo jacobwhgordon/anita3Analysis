@@ -4,8 +4,8 @@ This repository stores code used in Jacob Gordon's thesis research.
 
 Code requires ROOT HEALPix, and anitaTools (OSU edit of anitaTools created by Sam Stafford, to be more precise) to run properly.  
 
-runInterferometry.cxx analyses raw .root data files storing ANITA-III data. (data also not included)  
-  The file also preforms interferometry on the data and calcualted quality cuts. 
+runInterferometry.cxx analyses raw .root data files storing ANITA-III data. (data also not included)  /n
+  The file also preforms interferometry on the data and calcualted quality cuts. /n
   (Written by Sam Stafford, Lightly altered by Jacob Gordon)
   
 runAnalysisStage01.cxx preforms the first round of analysis cuts, which focus on cuts that are directional or location based.
